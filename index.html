@@ -7,8 +7,249 @@
 
      <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
 </head>
 <body>
-    <h2 class="bg-amber-500 btn">hi</h2>
+    <header class="px-4 py-2">
+        <div>
+            <h1 class="text-2xl font-bold">Job Application Tracker</h1>
+                <div class="flex justify-between items-center py-2.5">
+                    <div class="w-[30%] bg-gray-300 p-[5px]">
+                        <h1>Total</h1>
+                        <p id="total">0</p>
+                    </div>
+                    <div class="w-[30%] bg-gray-300 p-[5px]">
+                        <h1>Interview</h1>
+                        <p id="interview-Count" class="text-green-500 font-bold">0</p>
+                    </div>
+                    <div class="w-[30%] bg-gray-300 p-[5px]">
+                        <h1>Rejected</h1>
+                        <p id="Rejected-Count" class="text-red-600 font-bold">0</p>
+                    </div>
+                </div>
+        </div>
+    </header>
+
+    <hr>
+
+    <main class="px-4 py-2">
+        <div class="flex justify-between items-center">
+            <h1>Available Jobs</h1>
+            <p>0 <span>jobs</span></p>
+        </div>
+
+        <!-- btn -->
+         <div class="pt-2">
+            <button class="btn bg-blue-600 text-white" id="all-filter-btn">All</button>
+            <button class="btn " id="all-filter-btn">Interview</button>
+            <button class="btn" id="all-filter-btn">Rejected</button>
+         </div>
+
+         <!-- cards -->
+         <section id="cards" class="pt-4 space-y-4">
+            <!-- card1 -->
+
+            <div class= "flex justify-between border p-3"> 
+                <div class="left-text space-y-2.5">
+                    <div>
+                        <p class="CompnayName">Mobile First Corp</p>
+                        <p class="SkillsName">React Native Developer</p>
+                    </div>
+                    <div>
+                        <p class="workDuration">Remote • Full-time •</p>
+                        <p class="slary">$130,000 - $175,000</p>
+                    </div>
+                    <p class="statuus bg-[#EEF4FF] inline p-[5px]">Not Applied</p>
+                    <p class="notees text-[12px] pt-2">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+
+                    <div  class="flex gap-2">
+                        <button id="" class="btn text-green-500 border-2 border-green-500 bg-none font-bold thrive-btn">interview</button>
+                        <button id="" class="btn text-red-500 border-2 border-red-500 bg-none font-bold strugle-btn">Rejected</button>
+                    </div>
+                </div>
+                <!-- delete btn -->
+                <div>
+                    <button class="btn"><i class="fa-solid fa-trash"></i></button>
+                </div>
+            </div>
+
+            <!-- card2 -->
+              <div class= "flex justify-between border p-3"> 
+                <div class="left-text space-y-2.5">
+                    <div>
+                        <p class="CompnayName">WebFlow Agency</p>
+                        <p class="SkillsName">Web Designer & Developer</p>
+                    </div>
+                    <div>
+                        <p class="workDuration">Los Angeles, CA• Part-time •</p>
+                        <p class="slary">$80,000 - $120,000</p>
+                    </div>
+                    <p class="statuus bg-[#EEF4FF] inline p-[5px]">Not Applied</p>
+                    <p class="notees text-[12px] pt-2">Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
+
+                    <div class="flex gap-2">
+                        <button id="" class="btn text-green-500 border-2 border-green-500 bg-none font-bold thrive-btn">interview</button>
+                        <button id="" class="btn text-red-500 border-2 border-red-500 bg-none font-bold strugle-btn">Rejected</button>
+                    </div>
+                </div>
+                <!-- delete btn -->
+                <div>
+                    <button class="btn"><i class="fa-solid fa-trash"></i></button>
+                </div>
+              </div>
+
+            <!-- card3 -->
+             <div class= "flex justify-between border p-3"> 
+                <div class="left-text space-y-2.5">
+                    <div>
+                        <p class="CompnayName">DataViz Solutions</p>
+                        <p class="SkillsName">Data Visualization Specialist</p>
+                    </div>
+                    <div>
+                        <p class="workDuration">Boston, MA • Full-time •</p>
+                        <p class="slary">$125,000 - $165,000</p>
+                    </div>
+                    <p class="statuus bg-[#EEF4FF] inline p-[5px]">Not Applied</p>
+                    <p class="notees text-[12px] pt-2">Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
+
+                    <div class="flex gap-2">
+                        <button id="" class="btn text-green-500 border-2 border-green-500 bg-none font-bold thrive-btn">interview</button>
+                        <button id="" class="btn text-red-500 border-2 border-red-500 bg-none font-bold strugle-btn">Rejected</button>
+                    </div>
+                </div>
+                <!-- delete btn -->
+                <div>
+                    <button class="btn"><i class="fa-solid fa-trash"></i></button>
+                </div>
+              </div>
+
+            <!-- card4 -->
+             <div class= "flex justify-between border p-3"> 
+                <div class="left-text space-y-2.5">
+                    <div>
+                        <p class="CompnayName">CloudFirst Inc</p>
+                        <p class="SkillsName">Backend Developer</p>
+                    </div>
+                    <div>
+                        <p class="workDuration">Seattle, WA • Full-time •</p>
+                        <p class="slary">$140,000 - $190,000</p>
+                    </div>
+                    <p class="statuus bg-[#EEF4FF] inline p-[5px]">Not Applied</p>
+                    <p class="notees text-[12px] pt-2">Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.</p>
+
+                    <div class="flex gap-2">
+                        <button id="" class="btn text-green-500 border-2 border-green-500 bg-none font-bold thrive-btn">interview</button>
+                        <button id="" class="btn text-red-500 border-2 border-red-500 bg-none font-bold strugle-btn">Rejected</button>
+                    </div>
+                </div>
+                <!-- delete btn -->
+                <div>
+                    <button class="btn"><i class="fa-solid fa-trash"></i></button>
+                </div>
+              </div>
+
+            <!-- card5 -->
+              <div class= "flex justify-between border p-3"> 
+                <div class="left-text space-y-2.5">
+                    <div>
+                        <p class="CompnayName">Innovation Labs</p>
+                        <p class="SkillsName">UI/UX Engineer</p>
+                    </div>
+                    <div>
+                        <p class="workDuration">Austin, TX • Full-time •</p>
+                        <p class="slary">$140,000 - $190,000</p>
+                    </div>
+                    <p class="statuus bg-[#EEF4FF] inline p-[5px]">Not Applied</p>
+                    <p class="notees text-[12px] pt-2">Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.</p>
+
+                    <div class="flex gap-2">
+                        <button id="" class="btn text-green-500 border-2 border-green-500 bg-none font-bold thrive-btn">interview</button>
+                        <button id="" class="btn text-red-500 border-2 border-red-500 bg-none font-bold strugle-btn">Rejected</button>
+                    </div>
+                </div>
+                <!-- delete btn -->
+                <div>
+                    <button class="btn"><i class="fa-solid fa-trash"></i></button>
+                </div>
+              </div>
+
+            <!-- card6 -->
+             <div class= "flex justify-between border p-3"> 
+                <div class="left-text space-y-2.5">
+                    <div>
+                        <p class="CompnayName">MegaCorp Solutions</p>
+                        <p class="SkillsName">JavaScript Developer</p>
+                    </div>
+                    <div>
+                        <p class="workDuration">New York, NY • Full-time •</p>
+                        <p class="slary">$130,000 - $170,00</p>
+                    </div>
+                    <p class="statuus bg-[#EEF4FF] inline p-[5px]">Not Applied</p>
+                    <p class="notees text-[12px] pt-2">Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.</p>
+
+                    <div class="flex gap-2">
+                        <button id="" class="btn text-green-500 border-2 border-green-500 bg-none font-bold thrive-btn">interview</button>
+                        <button id="" class="btn text-red-500 border-2 border-red-500 bg-none font-bold strugle-btn">Rejected</button>
+                    </div>
+                </div>
+                <!-- delete btn -->
+                <div>
+                    <button class="btn"><i class="fa-solid fa-trash"></i></button>
+                </div>
+              </div>
+
+            <!-- card7 -->
+             <div class= "flex justify-between border p-3"> 
+                <div class="left-text space-y-2.5">
+                    <div>
+                        <p class="CompnayName">StartupXYZ</p>
+                        <p class="SkillsName">Full Stack Engineer</p>
+                    </div>
+                    <div>
+                        <p class="workDuration">Remote • Full-time • </p>
+                        <p class="slary"> $120,000 - $160,000</p>
+                    </div>
+                    <p class="statuus bg-[#EEF4FF] inline p-[5px]">Not Applied</p>
+                    <p class="notees text-[12px] pt-2">Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.</p>
+
+                    <div class="flex gap-2">
+                        <button id="" class="btn text-green-500 border-2 border-green-500 bg-none font-bold thrive-btn">interview</button>
+                        <button id="" class="btn text-red-500 border-2 border-red-500 bg-none font-bold strugle-btn">Rejected</button>
+                    </div>
+                </div>
+                <!-- delete btn -->
+                <div>
+                    <button class="btn"><i class="fa-solid fa-trash"></i></button>
+                </div>
+              </div>
+
+            <!-- card8 -->
+             <div class= "flex justify-between border p-3"> 
+                <div class="left-text space-y-2.5">
+                    <div>
+                        <p class="CompnayName">TechCorp Industries</p>
+                        <p class="SkillsName">Senior Frontend Developer</p>
+                    </div>
+                    <div>
+                        <p class="workDuration">San Francisco, CA • Full-time •</p>
+                        <p class="slary"> $130,000 - $175,000</p>
+                    </div>
+                    <p class="statuus bg-[#EEF4FF] inline p-[5px]">Not Applied</p>
+                    <p class="notees text-[12px] pt-2">Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.</p>
+
+                    <div class="flex gap-2">
+                        <button id="" class="btn text-green-500 border-2 border-green-500 bg-none font-bold thrive-btn">interview</button>
+                        <button id="" class="btn text-red-500 border-2 border-red-500 bg-none font-bold strugle-btn">Rejected</button>
+                    </div>
+                </div>
+                <!-- delete btn -->
+                <div>
+                    <button class="btn"><i class="fa-solid fa-trash"></i></button>
+                </div>
+              </div>
+         </section>
+    </main>
 </body>
 </html>
