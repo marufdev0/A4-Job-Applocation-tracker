@@ -26,25 +26,26 @@
                     </div>
                     <div class="w-[30%] bg-gray-300 p-[5px]">
                         <h1>Rejected</h1>
-                        <p id="Rejected-Count" class="text-red-600 font-bold">0</p>
+                        <p id="rejected-Count" class="text-red-600 font-bold">0</p>
                     </div>
                 </div>
         </div>
     </header>
 
     <hr>
-
-    <main class="px-4 py-2">
+    <section class="px-4">
         <div class="flex justify-between items-center">
             <h1>Available Jobs</h1>
-            <p>0 <span>jobs</span></p>
+            <p><span id="cards-list">0</span> jobs</p>
         </div>
+    </section>
+    <main class="px-4 py-2">
 
         <!-- btn -->
          <div class="pt-2">
-            <button class="btn bg-blue-600 text-white" id="all-filter-btn">All</button>
-            <button class="btn " id="all-filter-btn">Interview</button>
-            <button class="btn" id="all-filter-btn">Rejected</button>
+            <button onclick="toggleStyle('all-btn')" class="btn bg-blue-600" id="all-btn">All</button>
+            <button onclick="toggleStyle('interview-btn')" class="btn " id="interview-btn">Interview</button>
+            <button onclick="toggleStyle('rejected-btn')" class="btn" id="rejected-btn">Rejected</button>
          </div>
 
          <!-- cards -->
@@ -251,5 +252,7 @@
               </div>
          </section>
     </main>
+
+    <script src="./Script/script.js"></script>
 </body>
 </html>
