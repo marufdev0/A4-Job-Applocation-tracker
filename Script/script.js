@@ -178,7 +178,7 @@ function rnaderInvterview (){
                         <p class="CompnayName">${interview.compnayName}</p>
                         <p class="SkillsName">${interview.SkillsName}</p>
                     </div>
-                    <div>
+                    <div class=" sm:flex gap-1">
                         <p class="workDuration">${interview.workDuration}</p>
                         <p class="slary">${interview.slary}</p>
                     </div>
@@ -214,7 +214,7 @@ function rnaderReject (){
                         <p class="CompnayName">${reject.compnayName}</p>
                         <p class="SkillsName">${reject.SkillsName}</p>
                     </div>
-                    <div>
+                    <div class=" sm:flex gap-1">
                         <p class="workDuration">${reject.workDuration}</p>
                         <p class="slary">${reject.slary}</p>
                     </div>
