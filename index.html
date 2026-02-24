@@ -33,13 +33,15 @@
     </header>
 
     <hr>
-    <section class="px-4">
-        <div class="flex justify-between items-center">
+   
+       
+    <main class="px-4 py-2">
+
+         <div class="flex justify-between items-center">
             <h1>Available Jobs</h1>
             <p><span id="cards-list">0</span> jobs</p>
         </div>
-    </section>
-    <main class="px-4 py-2">
+   
 
         <!-- btn -->
          <div class="pt-2">
@@ -47,6 +49,20 @@
             <button onclick="toggleStyle('interview-btn')" class="btn " id="interview-btn">Interview</button>
             <button onclick="toggleStyle('rejected-btn')" class="btn" id="rejected-btn">Rejected</button>
          </div>
+
+         
+        <!-- no jobs -->
+         <div id="no-jobs" class="text-center bg-gray-200 py-10 mt-5 hidden">
+            <img src="./images/jobs.png" class="mx-auto" alt="">
+            <h2 class="text-2xl font-bold">No jobs available</h2>
+            <p>Check back soon for new job opportunities</p>
+         </div>
+
+         <!-- empty section -->
+          <section id="filter-section">
+
+          </section>
+
 
          <!-- cards -->
          <section id="cards" class="pt-4 space-y-4">
@@ -66,8 +82,8 @@
                     <p class="notees text-[12px] pt-2">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
 
                     <div  class="flex gap-2">
-                        <button id="" class="btn text-green-500 border-2 border-green-500 bg-none font-bold thrive-btn">interview</button>
-                        <button id="" class="btn text-red-500 border-2 border-red-500 bg-none font-bold strugle-btn">Rejected</button>
+                        <button  class="btn text-green-500 border-2 border-green-500 bg-none font-bold intervewbtn">interview</button>
+                        <button id="" class="btn text-red-500 border-2 border-red-500 bg-none font-bold rejectbtn">Rejected</button>
                     </div>
                 </div>
                 <!-- delete btn -->
@@ -91,8 +107,8 @@
                     <p class="notees text-[12px] pt-2">Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
 
                     <div class="flex gap-2">
-                        <button id="" class="btn text-green-500 border-2 border-green-500 bg-none font-bold thrive-btn">interview</button>
-                        <button id="" class="btn text-red-500 border-2 border-red-500 bg-none font-bold strugle-btn">Rejected</button>
+                        <button id="" class="btn text-green-500 border-2 border-green-500 bg-none font-bold intervewbtn">interview</button>
+                        <button id="" class="btn text-red-500 border-2 border-red-500 bg-none font-bold rejectbtn">Rejected</button>
                     </div>
                 </div>
                 <!-- delete btn -->
@@ -116,8 +132,8 @@
                     <p class="notees text-[12px] pt-2">Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
 
                     <div class="flex gap-2">
-                        <button id="" class="btn text-green-500 border-2 border-green-500 bg-none font-bold thrive-btn">interview</button>
-                        <button id="" class="btn text-red-500 border-2 border-red-500 bg-none font-bold strugle-btn">Rejected</button>
+                        <button id="" class="btn text-green-500 border-2 border-green-500 bg-none font-bold intervewbtn">interview</button>
+                        <button id="" class="btn text-red-500 border-2 border-red-500 bg-none font-bold rejectbtn">Rejected</button>
                     </div>
                 </div>
                 <!-- delete btn -->
@@ -141,8 +157,8 @@
                     <p class="notees text-[12px] pt-2">Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.</p>
 
                     <div class="flex gap-2">
-                        <button id="" class="btn text-green-500 border-2 border-green-500 bg-none font-bold thrive-btn">interview</button>
-                        <button id="" class="btn text-red-500 border-2 border-red-500 bg-none font-bold strugle-btn">Rejected</button>
+                        <button id="" class="btn text-green-500 border-2 border-green-500 bg-none font-bold intervewbtn">interview</button>
+                        <button id="" class="btn text-red-500 border-2 border-red-500 bg-none font-bold rejectbtn">Rejected</button>
                     </div>
                 </div>
                 <!-- delete btn -->
@@ -166,8 +182,8 @@
                     <p class="notees text-[12px] pt-2">Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.</p>
 
                     <div class="flex gap-2">
-                        <button id="" class="btn text-green-500 border-2 border-green-500 bg-none font-bold thrive-btn">interview</button>
-                        <button id="" class="btn text-red-500 border-2 border-red-500 bg-none font-bold strugle-btn">Rejected</button>
+                        <button id="" class="btn text-green-500 border-2 border-green-500 bg-none font-bold intervewbtn">interview</button>
+                        <button id="" class="btn text-red-500 border-2 border-red-500 bg-none font-bold rejectbtn">Rejected</button>
                     </div>
                 </div>
                 <!-- delete btn -->
@@ -191,8 +207,8 @@
                     <p class="notees text-[12px] pt-2">Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.</p>
 
                     <div class="flex gap-2">
-                        <button id="" class="btn text-green-500 border-2 border-green-500 bg-none font-bold thrive-btn">interview</button>
-                        <button id="" class="btn text-red-500 border-2 border-red-500 bg-none font-bold strugle-btn">Rejected</button>
+                        <button id="" class="btn text-green-500 border-2 border-green-500 bg-none font-bold intervewbtn">interview</button>
+                        <button id="" class="btn text-red-500 border-2 border-red-500 bg-none font-bold rejectbtn">Rejected</button>
                     </div>
                 </div>
                 <!-- delete btn -->
@@ -216,8 +232,8 @@
                     <p class="notees text-[12px] pt-2">Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.</p>
 
                     <div class="flex gap-2">
-                        <button id="" class="btn text-green-500 border-2 border-green-500 bg-none font-bold thrive-btn">interview</button>
-                        <button id="" class="btn text-red-500 border-2 border-red-500 bg-none font-bold strugle-btn">Rejected</button>
+                        <button id="" class="btn text-green-500 border-2 border-green-500 bg-none font-bold intervewbtn">interview</button>
+                        <button id="" class="btn text-red-500 border-2 border-red-500 bg-none font-bold rejectbtn">Rejected</button>
                     </div>
                 </div>
                 <!-- delete btn -->
@@ -241,8 +257,8 @@
                     <p class="notees text-[12px] pt-2">Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.</p>
 
                     <div class="flex gap-2">
-                        <button id="" class="btn text-green-500 border-2 border-green-500 bg-none font-bold thrive-btn">interview</button>
-                        <button id="" class="btn text-red-500 border-2 border-red-500 bg-none font-bold strugle-btn">Rejected</button>
+                        <button id="" class="btn text-green-500 border-2 border-green-500 bg-none font-bold intervewbtn">interview</button>
+                        <button id="" class="btn text-red-500 border-2 border-red-500 bg-none font-bold rejectbtn">Rejected</button>
                     </div>
                 </div>
                 <!-- delete btn -->
