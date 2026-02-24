@@ -87,14 +87,14 @@ mainContainer.addEventListener('click', function(event){
     const slary = parenNode.querySelector('.slary').innerText;
     const  statuus = parenNode.querySelector('.statuus').innerText;
     const notees = parenNode.querySelector('.notees').innerText;
-    parenNode.querySelector('.statuus').innerText = 'interview'
+    parenNode.querySelector('.statuus').innerHTML = `<p  class=" text-green-500 border-2 border-green-500 bg-none font-bold inline p-1.5 rounded-[5px]">interview</p>`
 
     const cardsInfo = {
         compnayName,
         SkillsName,
         workDuration,
         slary,
-        statuus: 'interview',
+        statuus: `<p  class=" text-green-500 border-2 border-green-500 bg-none font-bold inline p-1.5 rounded-[5px]">interview</p>`,
         notees
     }
     
@@ -107,11 +107,8 @@ mainContainer.addEventListener('click', function(event){
     rejectedList = rejectedList.filter(item => item.compnayName != cardsInfo.compnayName)
     if(curentStatuus == "rejected-btn"){
         rnaderInvterview();
-    }
-        
+    }    
     calculatCount();
-    
-    
 
     }else if(event.target.classList.contains('rejectbtn')){
         const parenNode = event.target.parentNode.parentNode;
@@ -121,14 +118,16 @@ mainContainer.addEventListener('click', function(event){
     const slary = parenNode.querySelector('.slary').innerText;
     const  statuus = parenNode.querySelector('.statuus').innerText;
     const notees = parenNode.querySelector('.notees').innerText;
-    parenNode.querySelector('.statuus').innerText = 'Rejected'
+    parenNode.querySelector('.statuus').innerHTML = `
+    <p  class=" text-red-500 border-2 border-red-500 bg-none font-bold inline p-1.5 rounded-[5px]">Rejected</p>
+    `
 
     const cardsInfo = {
         compnayName,
         SkillsName,
         workDuration,
         slary,
-        statuus: 'Rejected',
+        statuus: `<p  class=" text-red-500 border-2 border-red-500 bg-none font-bold inline p-1.5 rounded-[5px]">Rejected</p>`,
         notees
     }
      
@@ -145,7 +144,23 @@ mainContainer.addEventListener('click', function(event){
     calculatCount();
     
     
+}else if(event.target.closest('.delet-btn')){
+
+    const deletBtn =event.target.closest('.cards-delete-btn');
+    const companyName = document.querySelector('.CompnayName');
+
+    interviewList = interviewList.filter(item => item.companyName != companyName);
+
+    rejectedList = rejectedList.filter(item => item.companyName != companyName)
+
+    deletBtn.remove();
+    calculatCount();
+
+    rnaderInvterview();
+    rnaderReject();
+
 }
+
 
      
 })
