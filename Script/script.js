@@ -1,5 +1,7 @@
 let interviewList = [];
 let rejectedList = [];
+let curentStatuus = "all";
+
 
 
 // job tracker 
@@ -39,24 +41,29 @@ function toggleStyle(id){
     rejectedbtn.classList.remove('bg-blue-600', 'text-white');
 
     let select = document.getElementById(id);
+    curentStatuus = id;
     select.classList.remove('bg-white', 'text-black');
     select.classList.add('bg-blue-600', 'text-white')
 
+
     if(id === 'interview-btn'){
             cards.classList.add('hidden');
+            rnaderInvterview();  
         if(interviewList.length === 0){
             noJobs.classList.remove('hidden');
             filterSection.classList.add('hidden');
         }else{
              noJobs.classList.add('hidden');
             filterSection.classList.remove('hidden');
-        }    
+        }  
+        
     }else if(id === 'all-btn'){
         noJobs.classList.add('hidden');
         cards.classList.remove('hidden');
         filterSection.classList.add('hidden');
     }else if(id === 'rejected-btn'){
          cards.classList.add('hidden');
+          rnaderReject();
          if(rejectedList.length === 0){
             noJobs.classList.remove('hidden')
             filterSection.classList.add('hidden')
@@ -64,6 +71,7 @@ function toggleStyle(id){
              noJobs.classList.add('hidden')
             filterSection.classList.remove('hidden')
          }
+        
     }
     console.log(id);
     
@@ -89,19 +97,59 @@ mainContainer.addEventListener('click', function(event){
         statuus: 'interview',
         notees
     }
+    
+    
     const interviewExist = interviewList.find(item => item.compnayName === cardsInfo.compnayName)
     if(!interviewExist){
         interviewList.push(cardsInfo);
     }
-    rnaderInvterview();
+   
+    rejectedList = rejectedList.filter(item => item.compnayName != cardsInfo.compnayName)
+    if(curentStatuus == "rejected-btn"){
+        rnaderInvterview();
+    }
+        
     calculatCount();
+    
+    
 
+    }else if(event.target.classList.contains('rejectbtn')){
+        const parenNode = event.target.parentNode.parentNode;
+    const compnayName = parenNode.querySelector('.CompnayName').innerText;
+    const SkillsName = parenNode.querySelector('.SkillsName').innerText;
+    const workDuration = parenNode.querySelector('.workDuration').innerText
+    const slary = parenNode.querySelector('.slary').innerText;
+    const  statuus = parenNode.querySelector('.statuus').innerText;
+    const notees = parenNode.querySelector('.notees').innerText;
+    parenNode.querySelector('.statuus').innerText = 'Rejected'
+
+    const cardsInfo = {
+        compnayName,
+        SkillsName,
+        workDuration,
+        slary,
+        statuus: 'Rejected',
+        notees
+    }
+     
+    const rejectedExist = rejectedList.find(item => item.compnayName === cardsInfo.compnayName)
+    if(!rejectedExist){
+        rejectedList.push(cardsInfo);
     }
 
+    interviewList = interviewList.filter(item => item.compnayName != cardsInfo.compnayName);
+    if(curentStatuus == 'interview-btn'){
+        rnaderReject();
+    }
+
+    calculatCount();
+    
+    
+}
 
      
 })
-
+// function interview 
 function rnaderInvterview (){
     filterSection.innerHTML = '';
 
@@ -123,8 +171,8 @@ function rnaderInvterview (){
                     <p class="notees text-[12px] pt-2">${interview.notees}</p>
 
                     <div  class="flex gap-2">
-                        <button id="" class="btn text-green-500 border-2 border-green-500 bg-none font-bold thrive-btn">interview</button>
-                        <button id="" class="btn text-red-500 border-2 border-red-500 bg-none font-bold strugle-btn">Rejected</button>
+                        <button id="" class="btn text-green-500 border-2 border-green-500 bg-none font-bold intervewbtn">interview</button>
+                        <button id="" class="btn text-red-500 border-2 border-red-500 bg-none font-bold rejectbtn">Rejected</button>
                     </div>
                 </div>
                 <!-- delete btn -->
@@ -135,6 +183,43 @@ function rnaderInvterview (){
         filterSection.appendChild(div);
     }
 }
+
+
+// function reject
+function rnaderReject (){
+    filterSection.innerHTML = '';
+
+    for(let reject of rejectedList){
+        console.log(reject);
+        let div = document.createElement('div');
+        div.className = 'flex justify-between border p-3 mt-2'
+        div.innerHTML= `
+        <div class="left-text space-y-2.5">
+                    <div>
+                        <p class="CompnayName">${reject.compnayName}</p>
+                        <p class="SkillsName">${reject.SkillsName}</p>
+                    </div>
+                    <div>
+                        <p class="workDuration">${reject.workDuration}</p>
+                        <p class="slary">${reject.slary}</p>
+                    </div>
+                    <p class="statuus bg-[#EEF4FF] inline p-[5px]">${reject.statuus}</p>
+                    <p class="notees text-[12px] pt-2">${reject.notees}</p>
+
+                    <div  class="flex gap-2">
+                        <button id="" class="btn text-green-500 border-2 border-green-500 bg-none font-bold intervewbtn">interview</button>
+                        <button id="" class="btn text-red-500 border-2 border-red-500 bg-none font-bold rejectbtn">Rejected</button>
+                    </div>
+                </div>
+                <!-- delete btn -->
+                <div>
+                    <button class="btn"><i class="fa-solid fa-trash"></i></button>
+                </div>
+        `
+        filterSection.appendChild(div);
+    }
+}
+
 
 
 
